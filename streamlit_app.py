@@ -2,7 +2,7 @@ import streamlit
 
 streamlit.title('Breackfast Favorites')
 
-streamlit.header('Breakfast Menu')
+streamlit.header('Breackfast Favorites')
 streamlit.text('🥣Omega 3 & Blueberry Oatmeal')
 streamlit.text('🥣Kale, Spinach & Rocket Smoothie')
 streamlit.text('🐔Hard-Boiled Free-Range Egg')
@@ -20,15 +20,5 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
-
-streamlit.title('Breackfast Favorites')
-
-
-
-
-streamlit.dataframe(my_fruit_list)
-
-
-
 
 
