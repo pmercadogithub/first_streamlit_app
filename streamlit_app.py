@@ -80,7 +80,8 @@ if streamlit.button('Add a Fruit to the List'):
 										
 ###############################################################################################
 #Snowflake functions
-def insert_row_snowflake2():
+def insert_row_snowflake2(():
     with my_cnx.cursor() as my_cur:
         my_cur.execute("insert into fruit_load_list values ('jackfruit')")
+	return 'Thanks insert_row_snowflake2 jackfruit'    
 ###############################################################################################
