@@ -73,15 +73,18 @@ def insert_row_snowflake(new_fruit):
         return 'Thanks for adding ' + new_fruit
 ###############################################################################################
 
+#add_my_fruit = streamlit.text_input('What fruit would you like information about to add3?')
+#if streamlit.button('Add a Fruit to the List'):
+#	back_from_funtion = insert_row_snowflake(add_my_fruit)
+#	streamlit.text(back_from_funtion)
+
+
+
+
 add_my_fruit = streamlit.text_input('What fruit would you like information about to add3?')
-if streamlit.button('Add a Fruit to the List'):
-	#back_from_funtion = insert_row_snowflake2()#add_my_fruit
-	#streamlit.text(back_from_funtion)
-	insert_row_snowflake2()
-										
-###############################################################################################
-#Snowflake functions
-def insert_row_snowflake2():
-    with my_cnx.cursor() as my_cur:
-        my_cur.execute("insert into fruit_load_list values ('jackfruit')")
-###############################################################################################
+if streamlit.button('Add Fruit to the List'):
+    my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+    res= insert_row_snowflake(add_my_fruit)
+    my_cnx.close()
+    streamlit.text(res)
+
